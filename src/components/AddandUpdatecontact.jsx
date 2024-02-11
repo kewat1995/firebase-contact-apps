@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import Model from "./Model";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
@@ -10,7 +11,7 @@ const contactShemaValidations = Yup.object().shape({
   name: Yup.string().required("Name is Required"),
   email: Yup.string().email("Invalid Email").required("Email is Required"),
 });
-const AddNadUpdatecontact = ({ isOpen, onClose, isUpdate, contact }) => {
+const AddandUpdatecontact = ({ isOpen, onClose, isUpdate, contact }) => {
   const addContact = async (contact) => {
     try {
       const contactsRef = collection(db, "contacts");
@@ -75,4 +76,4 @@ const AddNadUpdatecontact = ({ isOpen, onClose, isUpdate, contact }) => {
     </div>
   );
 };
-export default AddNadUpdatecontact;
+export default AddandUpdatecontact;

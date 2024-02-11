@@ -1,12 +1,14 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { toast } from "react-toastify";
-import AddNadUpdatecontact from "./AddNadUpdatecontact";
+
 import useCustomeHooks from "../Hooks/useCustomeHooks";
+import AddandUpdatecontact from "./AddandUpdatecontact";
 const ContactCard = ({ contact }) => {
   const { isOpen, onClose, onOpen } = useCustomeHooks();
   const contactsDelete = async (id) => {
@@ -36,7 +38,7 @@ const ContactCard = ({ contact }) => {
           />
         </div>
       </div>
-      <AddNadUpdatecontact
+      <AddandUpdatecontact
         contact={contact}
         isUpdate
         isOpen={isOpen}

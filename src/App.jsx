@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import { IoIosSearch } from "react-icons/io";
 import { MdAddCircle } from "react-icons/md";
+// eslint-disable-next-line no-unused-vars
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 import ContactCard from "./components/ContactCard";
 import useCustomeHooks from "./Hooks/useCustomeHooks";
-import AddNadUpdatecontact from "./components/AddNadUpdatecontact";
+
 import ContactNotFound from "./components/ContactNotFound";
+import AddandUpdatecontact from "./components/AddandUpdatecontact";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -86,7 +88,7 @@ const App = () => {
         </div>
       </div>
       <ToastContainer position="bottom-center" />
-      <AddNadUpdatecontact isOpen={isOpen} onClose={onClose} />
+      <AddandUpdatecontact isOpen={isOpen} onClose={onClose} />
     </main>
   );
 };
